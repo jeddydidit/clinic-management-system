@@ -1,7 +1,7 @@
  Clinic Management System
 
 📌 Description
-This system helps clinics manage patients, appointments, and medical stock digitally.
+This system helps clinics manage  medical stock digitally.
  🛠 Technologies Used
 - PHP
 - MySQL
@@ -9,9 +9,7 @@ This system helps clinics manage patients, appointments, and medical stock digit
 - JavaScript
 
 ⚙️ Features
-- Patient records management
 - Stock tracking
-- Appointment scheduling
 - Report generation
 
 🗄 Database
