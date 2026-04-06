@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap");
+
+:root{
+  --bg:#edf4f7;
+  --surface:rgba(255,255,255,.66);
+  --ink:#15202a;
+  --muted:#667786;
+  --brand:#0b6c66;
+  --brand-2:#1f7cc6;
+  --line:rgba(124,145,160,.18);
+  --shadow:0 24px 60px rgba(15,23,42,.12);
+  --radius:22px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:"Space Grotesk", sans-serif;
+  color:var(--ink);
+  background:
+    linear-gradient(135deg, rgba(8,20,32,.08), rgba(9,34,56,.04)),
+    url("https://source.unsplash.com/featured/1600x1200/?hospital,clinic,interior") center/cover fixed no-repeat,
+    radial-gradient(1000px 600px at 10% -10%, rgba(255,255,255,.1), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(15,118,110,.14), transparent 55%),
+    var(--bg);
+  background-blend-mode: normal, normal, screen, screen, normal;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 18px;
+}
+
+body.auth-login{
+  background:
+    linear-gradient(135deg, rgba(8,20,32,.07), rgba(9,34,56,.035)),
+    url("https://source.unsplash.com/featured/1600x1200/?hospital,clinic,bright") center/cover fixed no-repeat,
+    radial-gradient(1000px 600px at 10% -10%, rgba(255,255,255,.08), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(15,118,110,.12), transparent 55%),
+    var(--bg);
+  background-blend-mode: normal, normal, screen, screen, normal;
+}
+
+body.auth-signup{
+  background:
+    linear-gradient(135deg, rgba(8,20,32,.07), rgba(9,34,56,.035)),
+    url("https://source.unsplash.com/featured/1600x1200/?pharmacy,medicine,clean") center/cover fixed no-repeat,
+    radial-gradient(1000px 600px at 10% -10%, rgba(255,255,255,.08), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(15,118,110,.12), transparent 55%),
+    var(--bg);
+  background-blend-mode: normal, normal, screen, screen, normal;
+}
+
+.auth-shell{
+  width:min(960px, 100%);
+  background:rgba(255,255,255,.08);
+  border-radius:28px;
+  box-shadow:0 34px 100px rgba(15,23,42,.16);
+  border:1px solid rgba(255,255,255,.36);
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  overflow:hidden;
+}
+
+.auth-hero{
+  padding:42px 40px;
+  background:
+    linear-gradient(140deg, rgba(15,118,110,.08), rgba(31,124,198,.05)),
+    url("https://source.unsplash.com/featured/1600x1200/?medical,clinic,room") center/cover no-repeat;
+  position:relative;
+  min-height:420px;
+}
+.auth-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(160deg, rgba(8,20,32,.06), rgba(8,20,32,.02)),
+    radial-gradient(600px 400px at 80% 20%, rgba(255,255,255,.06), transparent 60%);
+}
+.auth-hero-content{
+  position:relative;
+  z-index:1;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.auth-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:"Fraunces", serif;
+  font-size:26px;
+  letter-spacing:.25px;
+  text-shadow:0 8px 28px rgba(0,0,0,.28);
+}
+.auth-brand-badge{
+  width:52px;
+  height:52px;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,.65), transparent 30%),
+    linear-gradient(135deg, rgba(14,165,160,.98), rgba(31,124,198,.9));
+  box-shadow:0 18px 36px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.46);
+  border:1px solid rgba(255,255,255,.26);
+}
+.auth-hero h1{
+  margin:0;
+  font-family:"Fraunces", serif;
+  font-size:32px;
+}
+.auth-hero p{
+  margin:0;
+  color:#f5fbff;
+  line-height:1.6;
+}
+.auth-hero .hero-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.1);
+  font-size:13px;
+  width:fit-content;
+}
+
+.auth-panel{
+  padding:40px 38px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+}
+.auth-panel h2{
+  margin:0;
+  font-size:30px;
+  font-family:"Fraunces", serif;
+  letter-spacing:-.01em;
+}
+.auth-panel p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.55;
+}
+
+.auth-form{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-top:8px;
+}
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.field label{
+  font-size:13px;
+  color:var(--muted);
+}
+.field input, .field select, .field textarea{
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(148,163,184,.18);
+  background:rgba(255,255,255,.34);
+  font-family:inherit;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
+}
+.password-input{
+  position:relative;
+}
+.password-input input{
+  width:100%;
+  padding-right:48px;
+}
+.password-toggle{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  width:38px;
+  height:38px;
+  border:1px solid rgba(15,118,110,.16);
+  border-radius:14px;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,.72), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,.74), rgba(244,248,251,.32));
+  color:var(--brand);
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  line-height:1;
+  font-size:15px;
+  box-shadow:
+    0 10px 20px rgba(15,23,42,.08),
+    inset 0 1px 0 rgba(255,255,255,.72);
+  backdrop-filter:blur(12px) saturate(140%);
+  -webkit-backdrop-filter:blur(12px) saturate(140%);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease,
+    color .18s ease,
+    background .18s ease;
+  overflow:hidden;
+}
+.password-toggle::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(15,118,110,.08), transparent 62%);
+  opacity:0;
+  transition:opacity .18s ease;
+}
+.password-toggle::after{
+  content:"";
+  position:absolute;
+  inset:1px;
+  border-radius:inherit;
+  background:linear-gradient(135deg, rgba(255,255,255,.22), transparent 55%);
+  pointer-events:none;
+}
+.password-toggle svg{
+  position:relative;
+  z-index:1;
+  width:18px;
+  height:18px;
+  pointer-events:none;
+  overflow:visible;
+}
+.password-toggle .eye-outline,
+.password-toggle .eye-pupil,
+.password-toggle .eye-slash{
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2.35;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  transition:
+    transform .22s ease,
+    opacity .22s ease,
+    stroke .22s ease,
+    filter .22s ease;
+}
+.password-toggle .eye-pupil{
+  fill:currentColor;
+  stroke:none;
+  transform-origin:center;
+}
+.password-toggle .eye-dot{
+  fill:currentColor;
+  stroke:none;
+  transform-origin:center;
+}
+.password-toggle .eye-slash{
+  opacity:0;
+  transform-origin:center;
+  transform:scale(.68);
+  stroke-width:2.4;
+}
+.password-toggle.is-visible .eye-pupil{
+  transform:scale(.72);
+}
+.password-toggle.is-visible .eye-dot{
+  transform:scale(.92);
+}
+.password-toggle.is-visible .eye-slash{
+  opacity:1;
+  transform:scale(1.02);
+}
+.password-toggle:hover .eye-outline,
+.password-toggle:hover .eye-pupil,
+.password-toggle:hover .eye-slash{
+  filter:drop-shadow(0 2px 4px rgba(11,108,102,.22));
+}
+.password-toggle:hover{
+  color:#0a5e59;
+  border-color:rgba(15,118,110,.28);
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,.88), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,.88), rgba(232,253,248,.5));
+  box-shadow:
+    0 14px 24px rgba(15,23,42,.11),
+    0 0 0 1px rgba(15,118,110,.06) inset;
+  transform:translateY(-50%) scale(1.05);
+}
+.password-toggle:hover .eye-pupil{
+  transform:scale(.78);
+}
+.password-toggle:hover svg{
+  animation:eye-breathe .45s ease;
+}
+.password-toggle:hover::before{
+  opacity:1;
+}
+.password-toggle:focus-visible{
+  outline:none;
+  box-shadow:
+    0 0 0 3px rgba(31,124,198,.14),
+    0 14px 22px rgba(15,23,42,.1);
+}
+.password-toggle:active svg{
+  transform:scale(.96);
+}
+
+@keyframes eye-breathe{
+  0%{transform:scale(1)}
+  45%{transform:scale(1.1)}
+  100%{transform:scale(1)}
+}
+.field input:focus, .field select:focus, .field textarea:focus{
+  outline:none;
+  border-color:rgba(31,124,198,.45);
+  box-shadow:0 0 0 3px rgba(31,124,198,.1), 0 10px 22px rgba(15,23,42,.08);
+}
+
+.auth-actions{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:8px;
+}
+.button{
+  width:100%;
+  padding:12px 18px;
+  border-radius:14px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  font-family:inherit;
+  box-shadow:0 12px 22px rgba(15,23,42,.12);
+}
+.button.primary{
+  background:linear-gradient(135deg, #0b6c66, #1f7cc6);
+  color:#fff;
+}
+.button.ghost{
+  background:rgba(241,245,249,.48);
+  color:var(--ink);
+}
+
+.auth-links{
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+}
+.auth-links a{
+  color:var(--brand);
+  text-decoration:none;
+}
+.auth-links a:hover{
+  text-decoration:underline;
+}
+
+.message{
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:14px;
+}
+.message.error{
+  background:rgba(254,226,226,.8);
+  color:#b91c1c;
+}
+.message.success{
+  background:rgba(220,252,231,.8);
+  color:#166534;
+}
+
+.password-hint{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.45;
+}
+
+.password-meter{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-top:8px;
+}
+
+.password-meter-track{
+  width:100%;
+  height:8px;
+  border-radius:999px;
+  background:rgba(148,163,184,.18);
+  overflow:hidden;
+}
+
+.password-meter-fill{
+  height:100%;
+  width:0%;
+  border-radius:999px;
+  transition:width .2s ease, background-color .2s ease;
+  background:linear-gradient(90deg, #ef4444, #f59e0b);
+}
+
+.password-meter-label{
+  font-size:12px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.password-meter-label strong{
+  color:var(--ink);
+  font-weight:600;
+}
+
+@media (max-width: 900px){
+  .auth-shell{
+    grid-template-columns:1fr;
+  }
+  .auth-hero{
+    min-height:260px;
+  }
+}
